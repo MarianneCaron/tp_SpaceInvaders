@@ -10,7 +10,7 @@ bool partieTermine;
 bool rejouer;
 
 void Affichage::init() {
-	UIKit::setDimensionFenetre(0, 0, 150, 50);
+	UIKit::setDimensionFenetre(0, 0, 180, 50);
 }
 
 int Affichage::menu() {
@@ -67,7 +67,7 @@ void Affichage::afficherScore(int niveau, int score, int nbVies) {
 	cout << "NIVEAU " << niveau;
 	UIKit::color(FOREGROUND_BLUE + FOREGROUND_GREEN + FOREGROUND_INTENSITY );
 	UIKit::gotoXY(120, 10);
-	cout << "Nombre de ET: " << ExtraTerrestre::getNombreExtraTerrestre();
+	cout << "Nombre de Martiens: " << ExtraTerrestre::getNombreExtraTerrestre();
 	UIKit::gotoXY(120, 12);
 	cout << "Score: " << score << "          ";
 	UIKit::gotoXY(120, 14);

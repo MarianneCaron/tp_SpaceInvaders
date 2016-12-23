@@ -5,6 +5,7 @@
 using namespace std;
 
 MartienSud::MartienSud(int type, int valeur) :MartienExtension(type, valeur) {
+	removeExtraTerrestre();
 	ET2 = "\\±/";
 }
 

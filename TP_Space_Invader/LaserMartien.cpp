@@ -5,6 +5,7 @@
 using namespace std;
 
 void LaserMartien::startLaserMartien(int x, int y) {
+	removeLaser();
 	coord.setPositionX(x);
 	coord.setPositionY(y+1);
 	putLaser();

@@ -1,10 +1,12 @@
 #include "MartienNord.h"
+#include "ExtraTerrestre.h"
 #include "UIKit.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
 MartienNord::MartienNord(int type, int valeur) :MartienExtension(type, valeur) {
+	removeExtraTerrestre();
 	ET1 = "\\¤/";
 }
 
