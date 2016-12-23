@@ -101,12 +101,14 @@ void Jeu::collisionLaserEt() {
 
 				// Traitement du laser
 				lesLasers[i]->removeLaser();
+				delete lesLasers[i];
 				lesLasers[i] = lesLasers[nbLasers - 1];
 				nbLasers--;
 
 				//Traitement des ET
 				lesET[j]->removeMartien();
 				score += lesET[j]->ajouterPoints();
+				delete lesET[j];
 				lesET[j] = lesET[ExtraTerrestre::getNombreExtraTerrestre() - 1];
 				ExtraTerrestre::reduireNombreExtraTerrestre();
 			}
@@ -123,6 +125,7 @@ void Jeu::collisionLaserVaisseau() {
 
 			// Traitement du laser
 			lesTirET[i]->removeLaser();
+			delete lesTirET[i];
 			lesTirET[i] = lesTirET[nbTirET - 1];
 			nbTirET--;
 
