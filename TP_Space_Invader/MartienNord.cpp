@@ -1,10 +1,11 @@
 #include "MartienNord.h"
+#include "UIKit.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
 MartienNord::MartienNord(int type, int valeur) :MartienExtension(type, valeur) {
-	ET1 = "\\0/";
+	ET1 = "\\¤/";
 }
 
 void MartienNord::resetMartien() {
@@ -16,30 +17,28 @@ void MartienNord::resetMartien() {
 
 void MartienNord::putMartien() const {
 	coord.gotoXY(coord.getPositionX(), coord.getPositionY());
+	UIKit::color(FOREGROUND_RED + FOREGROUND_INTENSITY);
 	cout << ET1;
+	UIKit::color(FOREGROUND_BLUE + FOREGROUND_GREEN + FOREGROUND_INTENSITY + FOREGROUND_RED);
 }
 
-void MartienNord::bougerMartien() {
-	removeMartien();
-	switch (rand() % 4) {
-		if ((coord.getPositionX() + 1) != 35) {
-	case 0: coord.setPositionX(coord.getPositionX() + 1);
-		break;
-		}
-		if ((coord.getPositionX() - 1) != 0) {
-	case 1: coord.setPositionX(coord.getPositionX() - 1);
-		break;
-		}
-		if ((coord.getPositionY() + 1) != 107) {
-	case 2: coord.setPositionY(coord.getPositionY() + 1);
-		break;
-		}
-		if ((coord.getPositionY() - 1) != 0) {
-	case 3: coord.setPositionY(coord.getPositionY() - 1);
-		break;
-		}
+void MartienNord::nouvelleCoordMartien() {
+
+	int percent = (rand() % 100 + 1);
+
+	if (percent < 40 && coord.getPositionY() < 35) {
+		coord.setPositionY(coord.getPositionY() + 1);
 	}
-	
+	else if (percent < 60 && coord.getPositionY() > 1) {
+		coord.setPositionY(coord.getPositionY() -1 );
+	}
+	else if (percent < 80 && coord.getPositionX() > 3) {
+		coord.setPositionX(coord.getPositionX() - 1);
+	}
+	else if (coord.getPositionX() < 107) {
+		coord.setPositionX(coord.getPositionX() + 1);
+	}
+
 }
 
 void MartienNord::removeMartien() const {

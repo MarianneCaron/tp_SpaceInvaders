@@ -1,17 +1,17 @@
 #pragma once
 
-#include "Vaisseau.h"
+#include "VaisseauDefender.h"
 #include "Saisie.h"
 
 
 class Joueur {
-	Vaisseau vaisseau;
+	VaisseauDefender vaisseau;
 	
 
 
 public:
 	Joueur();
-	Vaisseau &getVaisseau();
+	VaisseauDefender &getVaisseau();
 	bool operationVaisseau();
 	
 };

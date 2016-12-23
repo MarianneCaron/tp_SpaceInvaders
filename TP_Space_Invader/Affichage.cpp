@@ -16,34 +16,35 @@ void Affichage::init() {
 int Affichage::menu() {
 
 	// Affichage du menu
+	UIKit::color( FOREGROUND_GREEN + FOREGROUND_INTENSITY + FOREGROUND_RED);
 	UIKit::gotoXY(0, 10);
-	cout << "	 					            ******  ********     ***     ******  ********                          " << endl;
-	cout << "	 					           **    ** **     **   ** **   **    ** **                                " << endl;
-	cout << "	 					           **       **     **  **   **  **       **                                " << endl;
-	cout << "	 					            ******  ********  **     ** **       ******                            " << endl;
-	cout << "	 					                 ** **        ********* **       **                                " << endl;
-	cout << "	 					           **    ** **        **     ** **    ** **                                " << endl;
-	cout << "	 					            ******  **        **     **  ******  ********                          " << endl << endl << endl;
-	cout << " 					  **** **    ** **     **    ***    ********  ******** ********   ******     **** **** " << endl;
-	cout << " 					   **  ***   ** **     **   ** **   **     ** **       **     ** **    **     **   **  " << endl;
-	cout << " 					   **  ****  ** **     **  **   **  **     ** **       **     ** **           **   **  " << endl;
-	cout << " 					   **  ** ** ** **     ** **     ** **     ** ******   ********   ******      **   **  " << endl;
-	cout << " 					   **  **  ****  **   **  ********* **     ** **       **   **         **     **   **  " << endl;
-	cout << " 					   **  **   ***   ** **   **     ** **     ** **       **    **  **    **     **   **  " << endl;
-	cout << " 					  **** **    **    ***    **     ** ********  ******** **     **  ******     **** **** " << endl;
+	cout << " 					            ******  ********     ***     ******  ********                          " << endl;
+	cout << " 					           **    ** **     **   ** **   **    ** **                                " << endl;
+	cout << " 					           **       **     **  **   **  **       **                                " << endl;
+	cout << " 					            ******  ********  **     ** **       ******                            " << endl;
+	cout << " 					                 ** **        ********* **       **                                " << endl;
+	cout << " 					           **    ** **        **     ** **    ** **                                " << endl;
+	cout << " 					            ******  **        **     **  ******  ********                          " << endl << endl << endl;
+	cout << "				  **** **    ** **     **    ***    ********  ******** ********   ******     **** **** " << endl;
+	cout << "				   **  ***   ** **     **   ** **   **     ** **       **     ** **    **     **   **  " << endl;
+	cout << "				   **  ****  ** **     **  **   **  **     ** **       **     ** **           **   **  " << endl;
+	cout << " 				   **  ** ** ** **     ** **     ** **     ** ******   ********   ******      **   **  " << endl;
+	cout << " 				   **  **  ****  **   **  ********* **     ** **       **   **         **     **   **  " << endl;
+	cout << " 				   **  **   ***   ** **   **     ** **     ** **       **    **  **    **     **   **  " << endl;
+	cout << " 				  **** **    **    ***    **     ** ********  ******** **     **  ******     **** **** " << endl;
+
+	UIKit::color(FOREGROUND_BLUE + FOREGROUND_GREEN + FOREGROUND_INTENSITY + FOREGROUND_RED);
 
 
-
-
-	UIKit::gotoXY(70, 27);
-	cout << "Niveau" << endl;
-	UIKit::gotoXY(70, 31);
+	UIKit::gotoXY(68, 29);
+	cout << "NIVEAU" << endl;
+	UIKit::gotoXY(65, 33);
 	cout << "1-Debutant" << endl;
-	UIKit::gotoXY(70, 33);
+	UIKit::gotoXY(65, 35);
 	cout << "2-Intermediaire" << endl;
-	UIKit::gotoXY(70, 35);
+	UIKit::gotoXY(65, 37);
 	cout << "3-Avance" << endl;
-	UIKit::gotoXY(65, 40);
+	UIKit::gotoXY(55, 40);
 	cout << "A quel Niveau voulez-vous commencer?";
 	int niveau;
 	niveau = Saisie::validerPlage(1, 3);
@@ -58,11 +59,37 @@ void Affichage::dessinerCadre() {
 }
 
 
-void Affichage::afficherScore(int score) {
-	UIKit::gotoXY(120, 20);
+void Affichage::afficherScore(int niveau, int score, int nbVies) {
+	
+	
+	
+	UIKit::gotoXY(125, 6);
+	cout << "NIVEAU " << niveau;
+	UIKit::color(FOREGROUND_BLUE + FOREGROUND_GREEN + FOREGROUND_INTENSITY );
+	UIKit::gotoXY(120, 10);
 	cout << "Nombre de ET: " << ExtraTerrestre::getNombreExtraTerrestre();
-	UIKit::gotoXY(120, 22);
-	cout << "Score: " << score << "   ";
+	UIKit::gotoXY(120, 12);
+	cout << "Score: " << score << "          ";
+	UIKit::gotoXY(120, 14);
+	cout << "Nombre de vies: " << nbVies << "       ";
+	UIKit::color(FOREGROUND_BLUE + FOREGROUND_GREEN + FOREGROUND_INTENSITY + FOREGROUND_RED);
+
+	UIKit::gotoXY(125, 20);
+	cout << "CONTROLE ";
+	UIKit::gotoXY(115, 24);
+	cout << "Tirer: barre d'espacement ";
+	UIKit::gotoXY(115, 26);
+	cout << "Vers la gauche: k ";
+	UIKit::gotoXY(115, 28);
+	cout << "Vers la droite: l ";
+
+	UIKit::color(FOREGROUND_INTENSITY + FOREGROUND_RED);
+	UIKit::gotoXY(120, 34);
+	cout << "\\¤/ = 100 pts ";
+	UIKit::color(FOREGROUND_GREEN + FOREGROUND_INTENSITY);
+	UIKit::gotoXY(120, 36);
+	cout << "\\±/ = 200 pts ";
+	UIKit::color(FOREGROUND_BLUE + FOREGROUND_GREEN + FOREGROUND_INTENSITY + FOREGROUND_RED);
 }
 
 bool Affichage::affichageFinPartie(bool gagne, int & niveau) {
@@ -74,12 +101,12 @@ bool Affichage::affichageFinPartie(bool gagne, int & niveau) {
 	else {
 		cout << "VOUS AVEZ GAGNE!";
 	}
-	UIKit::gotoXY(70, 27);
+	UIKit::gotoXY(65, 27);
 	cout << "Voulez-vous rejouer? (o/n)";
 	bool rejouer = ((Saisie::oui_non() == 'O') ? true : false);
 
 	if (gagne && rejouer && niveau <= 2) {
-		UIKit::gotoXY(70, 29);
+		UIKit::gotoXY(65, 29);
 		cout << "Voulez-vous passer au prochain niveau? (o/n)";
 		if (Saisie::oui_non() == 'O') {
 			(niveau)++;

@@ -14,10 +14,10 @@ void LaserMartien::startLaserMartien(int x, int y) {
 void LaserMartien::moveLaser() {
 	removeLaser();
 	coord.setPositionY(coord.getPositionY() + 1);
-	putLaser();
+	putLaserMartien();
 }
 
 void LaserMartien::putLaserMartien() {
 	coord.gotoXY(coord.getPositionX(), coord.getPositionY());
-	cout << char(46);
+	cout << "'";
 }

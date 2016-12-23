@@ -6,14 +6,15 @@
 #include "LaserMartien.h"
 
 //Déclaration des constantes
-#define MAX_LASERS 80
-#define MAX_ET 80
+#define MAX_LASERS 200
+#define MAX_ET 200
 #define MAX_TIR_ET 200
 
 class Jeu {
 private:
 	int niveau;
 	int score;
+	int nbVies;
 	bool premierTour;
 	// Création du joueur
 	Joueur leJoueur;
@@ -38,11 +39,24 @@ private:
 	// Timer pour un nouveau tir d'alien
 	Timer nouveauTirET;
 
+	// Les méthodes privées de jeu
+	bool collisionEntreMartiens(const MartienExtension & martien);
+	bool champLibreTirer(const MartienExtension & martien);
+	void bougerLasers();
+	void collisionLaserEt();
+	void collisionLaserVaisseau();
+	void actionJoueur();
+	void tirMartien();
+	void bougerMartien();
+	void apparitionMartien();
 public:
 	// Le constructeur
 	Jeu(int niveau);
-
+	// Le destructeur
+	~Jeu();
 	// Les méthodes
 	void boucleJeu();
-	bool collisionEntreMartiens(const MartienExtension & martien);
+
+
+	
 };

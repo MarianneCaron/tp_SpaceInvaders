@@ -1,6 +1,8 @@
 #include "Timer.h"
 
-Timer::Timer() {}
+Timer::Timer() {
+	this->delai = 0;
+}
 
 Timer::Timer(int delai) {
 	this->delai = delai;

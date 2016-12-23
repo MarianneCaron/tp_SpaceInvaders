@@ -161,6 +161,7 @@
     <ClInclude Include="Timer.h" />
     <ClInclude Include="UIKit.h" />
     <ClInclude Include="Vaisseau.h" />
+    <ClInclude Include="VaisseauDefender.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Affichage.cpp" />
@@ -179,6 +180,7 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UIKit.cpp" />
     <ClCompile Include="Vaisseau.cpp" />
+    <ClCompile Include="VaisseauDefender.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

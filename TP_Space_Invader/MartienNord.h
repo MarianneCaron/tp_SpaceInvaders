@@ -13,7 +13,7 @@ public:
 	MartienNord(int type, int valeur);
 
 	void putMartien() const override;
-	void bougerMartien()  override;
+	void nouvelleCoordMartien()  override;
 	void resetMartien() override;
 	void removeMartien() const override;
 };
